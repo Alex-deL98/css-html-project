@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     /* Font Family */
     --font-family: 'Roboto', sans-serif;
@@ -15,11 +21,17 @@ body {
     background-color: var(--primary-dark);
     color: var(--text-light);
     font-family: var(--font-family);
+    padding: 0;
 }
 nav {
     display: grid;
     place-items: center;
     background-color: var(--accent-1);
+}
+.sticky-nav-buttons {
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 nav > ul {
     display: grid;
@@ -51,11 +63,20 @@ li:hover {
 }
 .promotion article img {
     width: 100%;
-    height: auto;
+    height: 30vh;
     filter: brightness(0.5);
+    object-fit: cover;
+    object-position: center;
 }
-.promotion article h1, p {
-    color: var(--primary-light);
+.promotion article {
+    position: relative;
+}
+
+.promotion-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 footer {
@@ -64,14 +85,31 @@ footer {
     gap: 1rem;
     background-color: var(--accent-1);
 }
-.header-logo {
+.logo {
     display: grid;
     place-items: center;
     padding: 1rem;
 }
-.header-logo img {
-    width: 5%;
+.logo img {
+    width: 75px;
     height: auto;
+}
+
+.product {
+    background-color: var(--accent-1);
+    margin: 12px;
+    padding: 12px;
+}
+.product:hover {
+    background-color: var(--accent-2);
+    margin: 12px;
+    cursor: pointer;
+}
+.product img {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+    object-position: center;
 }
 .footer-logo {
     display: grid;
@@ -81,4 +119,11 @@ footer {
 .footer-logo img {
     width: 10%;
     height: auto;
+}
+
+/* Add this media query at the end of your CSS file */
+@media screen and (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr; /* Changes to a single column */
+    }
 }
