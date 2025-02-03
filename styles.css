@@ -32,8 +32,21 @@ body {
     font-family: var(--font-family);
     padding: 0;
 }
+main h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 200;
+}
 footer {
     padding: 1rem;
+}
+button {
+    background-color: var(--accent-2);
+    font-size: 1.15rem;
+    color: var(--text-dark);
+    border: none;
+    padding: .5rem;
+    border-radius: 8px;
 }
 
 .sticky-nav-buttons {
@@ -63,11 +76,13 @@ li:hover {
     cursor: pointer;
     transform: translateY(-2px);
 }
-.products-content {
+.logo {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
     place-items: center;
+}
+.logo img {
+    width: 75px;
+    height: auto;
 }
 .promotion article img {
     width: 100%;
@@ -87,18 +102,12 @@ li:hover {
     transform: translate(-50%, -50%);
     text-align: center;
 }
-footer {
-    background-color: var(--accent-1);
-}
-.logo {
+.products-content {
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
     place-items: center;
 }
-.logo img {
-    width: 75px;
-    height: auto;
-}
-
 .product {
     background-color: var(--accent-1);
     margin: 12px;
@@ -111,6 +120,12 @@ footer {
     margin: 12px;
     cursor: pointer;
 }
+.featured-products-footer {
+    display: grid;
+    place-items: center;
+    margin: 1rem;
+}
+
 .product img {
     width: 100%;
     height: 30vh;
@@ -122,13 +137,6 @@ footer {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
-
-main h1 {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 200;
-}
-
 .product-info {
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -136,7 +144,9 @@ main h1 {
 .product-rating {
     justify-self: end;
 }
-
+footer {
+    background-color: var(--accent-1);
+}
 
 /* Add this media query at the end of your CSS file */
 @media screen and (max-width: 768px) {
