@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 :root {
     /* Font Family */
     --font-family: 'Roboto', sans-serif;
@@ -49,33 +48,52 @@ button {
     border-radius: 8px;
 }
 
+button:hover {
+    background-color: var(--primary-light);
+    cursor: pointer;
+}
+
 .sticky-nav-buttons {
     position: sticky;
     top: 0;
     z-index: 100;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    padding: 0 2rem;
 }
+
 nav > ul {
     display: grid;
     grid-auto-flow: column;
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 50%;
 }
+
+nav a {
+    color: var(--text-light);
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+
 li {
     padding: .5em;
-    background-color: var(--primary-light);
-    border: 1px solid var(--accent-2);
     border-radius: 8px;
     text-align: center;
-    color: var(--text-dark);
     transition: all 0.3s ease;
 }
 li:hover {
-    background-color: var(--hover-color);
+    background-color: var(--primary-light);
     cursor: pointer;
     transform: translateY(-2px);
 }
+
+li:hover a {
+    color: var(--text-dark);
+    transition: color 0.3s ease;
+}
+
 .logo {
     display: grid;
     place-items: center;
@@ -84,14 +102,14 @@ li:hover {
     width: 75px;
     height: auto;
 }
-.promotion article img {
+.banner article img {
     width: 100%;
     height: 30vh;
     filter: brightness(0.5);
     object-fit: cover;
     object-position: center;
 }
-.promotion article {
+.banner article {
     position: relative;
 }
 
@@ -107,7 +125,12 @@ li:hover {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     place-items: center;
+    padding: 0 2rem;
 }
+.product-price {
+    font-size: 1.2rem;
+}
+
 .product {
     background-color: var(--accent-1);
     margin: 12px;
@@ -119,7 +142,15 @@ li:hover {
     box-shadow: inset 0 0 0 1px var(--accent-2);
     margin: 12px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    transform: translateY(-2px);
 }
+.content-header {
+    display: grid;
+    place-items: center;
+    margin: 1rem;
+}
+
 .featured-products-footer {
     display: grid;
     place-items: center;
@@ -137,6 +168,7 @@ li:hover {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
+
 .product-info {
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -148,9 +180,127 @@ footer {
     background-color: var(--accent-1);
 }
 
-/* Add this media query at the end of your CSS file */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.value-item {
+    background-color: var(--accent-1);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.value-item h3 {
+    color: var(--accent-2);
+    margin-bottom: 1rem;
+}
+
+.value-item p {
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 1024px) {
+    .products-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .products-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .product {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .product img {
+        height: 25vh;  /* Slightly smaller images on mobile */
+    }
+    
+    .product-info {
+        grid-template-columns: 1fr;  /* Stack info on mobile */
+        gap: 0.5rem;
+    }
+    
+    .product-rating {
+        justify-self: start;  /* Align ratings to left on mobile */
+    }
+}
+
+/* Make product clickable */
+.product a {
+    color: inherit;
+}
+
+/* Modal styles */
+.modal {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.modal-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--accent-1);
+    margin: 5% auto;
+    padding: 24px;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 8px;
+    z-index: 1001; /* Ensure content stays above the background */
+}
+
+.modal-product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.modal-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.modal-details {
+    color: var(--text-light);
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    text-decoration: none;
+    font-size: 28px;
+    color: var(--text-light);
+}
+
 @media screen and (max-width: 768px) {
-    .content {
-        grid-template-columns: 1fr; /* Changes to a single column */
+    .modal-product {
+        grid-template-columns: 1fr;
     }
 }
