@@ -59,6 +59,8 @@ button {
 button:hover {
     background-color: var(--primary-light);
     cursor: pointer;
+    transition: all 0.3s ease;
+    transform: translateY(-2px);
 }
 
 nav.navigation-items {
