@@ -12,15 +12,15 @@
             <img src="static-assets/logo-pink.png" alt="Lucky Shrubs Logo">
         </div>
     </header>
-    <nav class="sticky-nav-buttons">
-        <ul>
+    <nav class="navigation-items">
+        <ul class="sticky-nav-buttons">
             <li><a href="home.html">Home Page</a></li>
             <li><a href="products.html">Products</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <ul>
-            <li> <a href="#">🇦🇺 AU</a></li>
+            <li>🇦🇺 AU</li>
         </ul>
     </nav>
     <main>
@@ -33,17 +33,27 @@
                 </div>
             </article>
         </section>
-        <section class="about-content">
-            <article class="about-description">
-                <section class="content-header">
-                    <h1>Contact Details</h1>
-                </section>
-                <section class="content-text">
-                    <p>Phone: 123-456-7890</p>
-                    <p>Email: info@luckyshrub.com</p>
-                    <p>Address: 1234 Main St, Anytown, USA</p>  
-                </section>
-            </article>
+        <section class="contact-content">
+            <section class="content-header">
+                <h1>Contact Form</h1>
+            </section>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email*:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message*:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
         </section>
     </main>
     <footer>

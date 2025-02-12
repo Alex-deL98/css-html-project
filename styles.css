@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 :root {
     /* Font Family */
     --font-family: 'Roboto', sans-serif;
@@ -24,6 +25,9 @@ nav {
     display: grid;
     place-items: center;
     background-color: var(--accent-1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 body {
     background-color: var(--primary-dark);
@@ -40,12 +44,16 @@ footer {
     padding: 1rem;
 }
 button {
+    display: inline-block;
     background-color: var(--accent-2);
     font-size: 1.15rem;
     color: var(--text-dark);
     border: none;
-    padding: .5rem;
+    padding: .5rem 1rem;
     border-radius: 8px;
+    width: fit-content;
+    justify-self: center;
+    
 }
 
 button:hover {
@@ -53,45 +61,29 @@ button:hover {
     cursor: pointer;
 }
 
-.sticky-nav-buttons {
-    position: sticky;
-    top: 0;
-    z-index: 100;
+nav.navigation-items {
     display: grid;
     grid-auto-flow: column;
     justify-content: space-between;
     padding: 0 2rem;
 }
 
-nav > ul {
+.sticky-nav-buttons {
     display: grid;
     grid-auto-flow: column;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    justify-content: space-between;
 }
 
-nav a {
+nav > ul {
+    list-style: none;
+}
+
+nav a, nav li {
     color: var(--text-light);
     font-size: 1.4rem;
     text-decoration: none;
-}
-
-li {
     padding: .5em;
     border-radius: 8px;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-li:hover {
-    background-color: var(--primary-light);
-    cursor: pointer;
-    transform: translateY(-2px);
-}
-
-li:hover a {
-    color: var(--text-dark);
-    transition: color 0.3s ease;
 }
 
 .logo {
@@ -99,7 +91,7 @@ li:hover a {
     place-items: center;
 }
 .logo img {
-    width: 75px;
+    width: 64px;
     height: auto;
 }
 .banner article img {
@@ -296,6 +288,32 @@ footer {
     top: 10px;
     text-decoration: none;
     font-size: 28px;
+    color: var(--text-light);
+}
+
+.contact-form {
+    display: grid;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.form-group {
+    display: grid;
+    gap: .5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--accent-2);
+    border-radius: 4px;
+    background-color: var(--accent-1);
     color: var(--text-light);
 }
 
