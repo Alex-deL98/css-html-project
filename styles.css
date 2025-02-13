@@ -6,13 +6,13 @@
 
 :root {
     /* Font Family */
-    --font-family: 'Roboto', sans-serif;
+    --font-family: futura-pt, sans-serif;
     
     /* Color Scheme */
     --primary-dark: #02221b;
-    --primary-light: #F8DCAB;
+    --primary-light: #e6d7bc;
     --accent-1: #054537;
-    --accent-2: #E9C46A;
+    --accent-2: #F8DCAB;
     --accent-3: #0f705b;
     --text-light: #ede7f1;
     --text-dark: #264653;
@@ -38,7 +38,7 @@ body {
 main h1 {
     text-align: center;
     font-size: 2rem;
-    font-weight: 200;
+    font-weight: 325;
 }
 footer {
     padding: 1rem;
@@ -53,6 +53,7 @@ button {
     border-radius: 8px;
     width: fit-content;
     justify-self: center;
+    font-size: 1.2rem;
     
 }
 
@@ -74,6 +75,14 @@ nav.navigation-items {
     display: grid;
     grid-auto-flow: column;
     justify-content: space-between;
+}
+
+.sticky-nav-buttons li:hover {
+    background-color: var(--accent-2);
+}
+
+.sticky-nav-buttons li:hover a {
+    color: var(--text-dark);
 }
 
 nav > ul {
@@ -113,7 +122,21 @@ nav a, nav li {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    font-size: 1.5rem;
 }
+.promotion-text:hover {
+    color: var(--accent-2);
+}
+
+.promotion-text h1 {
+    font-size: 4rem;
+}
+
+a.promotion-text {
+    text-decoration: none;
+    color: var(--text-light);
+}
+
 .products-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -121,8 +144,10 @@ nav a, nav li {
     place-items: center;
     padding: 0 2rem;
 }
-.product-price {
-    font-size: 1.2rem;
+
+.product-name {
+    font-size: 1.4rem;
+    font-weight: 500;
 }
 
 .product {
@@ -167,6 +192,7 @@ nav a, nav li {
     display: grid;
     grid-template-columns: 3fr 2fr;
 }
+
 .product-rating {
     justify-self: end;
 }
@@ -230,6 +256,7 @@ footer {
 
 .product a {
     color: inherit;
+    text-decoration: none;
 }
 
 /* Modal styles */
@@ -318,6 +345,7 @@ footer {
 .modal-product-details {
     gap: 1rem;
     padding: 1rem 0;
+    
 }
 
 .contact-form {
