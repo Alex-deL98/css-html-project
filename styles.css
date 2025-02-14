@@ -142,7 +142,7 @@ a.promotion-text {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     place-items: center;
-    padding: 0 2rem;
+    padding: 1rem 2rem;
 }
 
 .product-name {
@@ -167,7 +167,7 @@ a.promotion-text {
 .content-header {
     display: grid;
     place-items: center;
-    margin: 1rem;
+    margin: 1rem 0 0 0;
 }
 
 .featured-products-footer {
@@ -251,15 +251,60 @@ footer {
     .product-rating {
         justify-self: start;  /* Align ratings to left on mobile */
     }
+
 }
 
+@media screen and (max-width: 480px) {
+    nav.navigation-items {
+        padding: 0 0.5rem;  /* Reduced padding on mobile */
+    }
+    
+    nav a, nav li {
+        font-size: 1rem;  /* Smaller font on mobile (was 1.4rem) */
+        padding: 0.25rem;  /* Smaller padding around nav items */
+    }
+
+    main h1 {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 325;
+    }
+
+    .promotion-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .promotion-text p {
+        font-size: 1rem;
+    }
+
+    .modal-product {
+        gap: 0;
+    }
+
+    .modal-details {
+        font-size: .9rem;
+    }
+
+    .close-modal {
+        text-shadow: 
+            -1px -1px 0 var(--accent-1),
+            1px -1px 0 var(--accent-1),
+            -1px 1px 0 var(--accent-1),
+            1px 1px 0 var(--accent-1);
+    }
+
+    .modal-content .modal-product-rating, .modal-content .modal-product-details {
+        padding: .5rem 0;
+        
+    }
+}
 
 .product a {
     color: inherit;
     text-decoration: none;
 }
 
-/* Modal styles */
 .modal {
     visibility: hidden;
     opacity: 0;
@@ -363,6 +408,7 @@ footer {
     max-width: 800px;
     justify-self: center;
     padding: 1rem;
+    font-size: 1.2rem;
 }
 
 .form-group {
@@ -383,6 +429,7 @@ footer {
 @media screen and (max-width: 768px) {
     .modal-product {
         grid-template-columns: 1fr;
+        gap: 0.25rem;
     }
 }
 
