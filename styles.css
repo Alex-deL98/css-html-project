@@ -188,6 +188,11 @@ a.promotion-text {
     gap: 1rem;
 }
 
+.footer-text-container {
+    display: grid;
+    align-items: center;
+}
+
 .product-info {
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -424,6 +429,7 @@ footer {
     border-radius: 4px;
     background-color: var(--accent-1);
     color: var(--text-light);
+    
 }
 
 @media screen and (max-width: 768px) {
