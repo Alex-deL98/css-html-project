@@ -412,8 +412,10 @@ footer {
 .content-text {
     max-width: 800px;
     justify-self: center;
+    margin: 0 auto;
     padding: 1rem;
     font-size: 1.2rem;
+    text-align: center;
 }
 
 .form-group {
